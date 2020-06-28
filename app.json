@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/myMusic/myMusic",
+    "pages/account/account",
+    "pages/playing/playing"
+  ],
+  "window": {
+      "navigationBarBackgroundColor": "#bc162c",
+      "navigationBarTitleText": "音乐播放",
+      "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "backgroundColor": "#bc162c",
+    "color": "#8a8a8a",
+    "selectedColor":"#fff",
+    "margin-top":"0px",
+    "list": [
+        {        
+        "pagePath": "pages/index/index", 
+        "text": "首页"
+        },
+        {
+          "pagePath":"pages/myMusic/myMusic",
+          "text":"我的音乐"
+        },
+        {
+          "pagePath":"pages/playing/playing",
+          "text":"正在播放"
+        },
+        {
+          "pagePath":"pages/account/account",
+          "text":"账号"
+        }
+
+    ]
+},
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

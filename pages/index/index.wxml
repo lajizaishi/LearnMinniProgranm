@@ -1,0 +1,48 @@
+<view>
+     <view>
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+            <!-- 最初始时的搜索框 -->
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索"/>
+                </view>
+                <!-- 可编辑时的搜索框 -->
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <!-- 取消搜索 -->
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+    </view>
+</view>
+<view class="swiper-tab">  
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">个性推荐</view>  
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">歌单</view>  
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">主播电台</view> 
+  <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">排行榜</view>     
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
+  <swiper-item>  
+   <view>
+      <swiper class='u-wrp-bnr'indicator-dots='true'autoplay='true'interval='5000'duration='1000'circular='true'>
+        <block wx:for="{{bnrUrl}}" wx:for-index="index" wx:key="index">
+          <swiper-item>
+            <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+   </view>  
+  </swiper-item>  
+  <swiper-item>  
+   <view>我是歌单</view>  
+  </swiper-item>  
+  <swiper-item>  
+   <view>我是主播电台</view>  
+  </swiper-item>  
+  <swiper-item>  
+   <view>我是排行榜</view>  
+  </swiper-item>  
+</swiper>
